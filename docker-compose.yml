@@ -1,0 +1,17 @@
+version: "1"
+services: 
+    app:
+        container_name: lovedev
+        restart: always
+        build: .
+        prots:
+            - "8888:8888"
+        links:
+            - mongo
+    mongo:
+        container_name: mongo
+        image: mongo
+        volumes:
+            - /root/db:/data/db
+        ports:
+            - "27017:27017"

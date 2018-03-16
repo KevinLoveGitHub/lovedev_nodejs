@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-    port: 8764,
+    port: 8888,
     url: 'mongodb://39.106.115.214:27017/lovedev',
     session: {
         name: 'SID',
