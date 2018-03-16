@@ -12,4 +12,4 @@ COPY package.json ./
 RUN npm install
 COPY . .
 EXPOSE 8888
-CMD ["pm2-docker", "npm", "run", "start"]
+CMD ["npm", "run", "dev"]
