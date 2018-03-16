@@ -12,7 +12,6 @@ const db = mongoose.connection;
 db.once('open', () => {
     console.log(
         chalk.green('连接数据库成功')
-        chalk.green('连接数据库成功')
     );
 });
 
