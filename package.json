@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development supervisor --harmony index.js",
-    "start": "cross-env NODE_ENV=production pm2 start index.js --node-args='--harmony' --name 'lovedev' --no-daemon",
+    "start": "cross-env NODE_ENV=production pm2 start --no-daemon index.js --node-args='--harmony' --name 'lovedev'",
     "stop": "cross-env NODE_ENV=production pm2 stop index.js --name 'node-elm'",
     "restart": "cross-env NODE_ENV=production pm2 restart index.js --node-args='--harmony' --name 'lovedev'"
   },
