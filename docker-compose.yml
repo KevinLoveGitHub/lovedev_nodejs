@@ -6,6 +6,9 @@ services:
         build: .
         ports:
             - "8888:8888"
+        volumes:
+            - /root/jenkins_home/workspace/lovedev_nodejs:/root/lovedev
+        command: sh /root/lovedev/start.sh
         links:
             - mongo
     mongo:

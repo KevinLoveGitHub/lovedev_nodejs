@@ -8,8 +8,4 @@ RUN npm set registry https://registry.npm.taobao.org \
     && npm install -g pm2 \
     && mkdir -p /root/lovedev
 WORKDIR /root/lovedev
-COPY package.json ./
-RUN npm install
-COPY . .
 EXPOSE 8888
-CMD ["npm", "run", "start"]
