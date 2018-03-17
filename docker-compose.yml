@@ -1,11 +1,20 @@
 version: "3"
-services: 
+services:
+    nginx:
+        container_name: nginx
+        image: nginx
+        volumes:
+          - /root/jenkins_home/workspace/lovedev_nodejs/nginx.conf:/etc/nginx/nginx.conf
+        links:
+          - app:app
+        ports:
+          - "80:80"
     app:
         container_name: lovedev
         restart: always
         build: .
         ports:
-            - "8888:8888"
+            - "8888"
         volumes:
             - /root/jenkins_home/workspace/lovedev_nodejs:/root/lovedev
         command: sh /root/lovedev/start.sh
