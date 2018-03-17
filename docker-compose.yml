@@ -6,21 +6,21 @@ services:
         volumes:
           - /root/jenkins_home/workspace/lovedev_nodejs/nginx.conf:/etc/nginx/nginx.conf
           - /root/nginx_log:/var/log/nginx
-        links:
-          - app:app
         ports:
           - "80:80"
+        depends_on:
+          - app
     app:
         container_name: lovedev
         restart: always
         build: .
         ports:
-            - "8888"
+            - "8888:8888"
         volumes:
             - /root/jenkins_home/workspace/lovedev_nodejs:/root/lovedev
         command: sh /root/lovedev/start.sh
-        links:
-            - mongo
+        depends_on:
+          - mongo
     mongo:
         container_name: mongo
         image: mongo
