@@ -5,6 +5,7 @@ services:
         image: nginx
         volumes:
           - /root/jenkins_home/workspace/lovedev_nodejs/nginx.conf:/etc/nginx/nginx.conf
+          - /root/nginx_log:/var/log/nginx
         links:
           - app:app
         ports:
