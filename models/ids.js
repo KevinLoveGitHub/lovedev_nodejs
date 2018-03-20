@@ -20,22 +20,22 @@ const idsSchema = new mongoose.Schema({
 const Ids = mongoose.model('Ids', idsSchema);
 
 Ids.findOne((err, data) => {
-	if (!data) {
-		const newIds = new Ids({
-			restaurant_id: 0,
-			food_id: 0,
-			order_id: 0,
-			user_id: 0,
-			address_id: 0,
-			cart_id: 0,
-			img_id: 0,
-			category_id: 0,
-			item_id: 0,
-			sku_id: 0, 
-			admin_id: 0,
-			statis_id: 0,
-		});
-		newIds.save();
-	}
-})
+  if (!data) {
+    const newIds = new Ids({
+      restaurant_id: 0,
+      food_id: 0,
+      order_id: 0,
+      user_id: 0,
+      address_id: 0,
+      cart_id: 0,
+      img_id: 0,
+      category_id: 0,
+      item_id: 0,
+      sku_id: 0,
+      admin_id: 0,
+      statis_id: 0,
+    });
+    newIds.save();
+  }
+});
 export default Ids
